@@ -1,0 +1,16 @@
+# Ignore everything by default
+*
+
+# Allow directories so we can unignore files inside them
+!*/
+
+# Only include C# source files anywhere in the tree
+!**/*.cs
+
+# Keep this .gitignore tracked
+!.gitignore
+
+# Notes:
+# - This will cause Git to ignore all files except files with the .cs extension.
+# - Files already tracked by Git (committed previously) will remain tracked until you remove them from the index.
+#   See the commands below if you want to update the repository to only track .cs files.
