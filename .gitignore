@@ -1,16 +1,72 @@
-# Ignore everything by default
-*
+## Ignore Visual Studio temporary files, build results, and user-specific files
 
-# Allow directories so we can unignore files inside them
-!*/
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
 
-# Only include C# source files anywhere in the tree
-!**/*.cs
+# Visual Studio Code workspace
+.vscode/
 
-# Keep this .gitignore tracked
+# Visual Studio
+.vs/
+
+# Rider
+.idea/
+
+# Build results
+[Bb]in/
+[Oo]bj/
+**/bin/
+**/obj/
+
+# NuGet packages
+*.nupkg
+packages/
+
+# NuGet Symbol packages
+*.snupkg
+
+# Backup & report files
+*.log
+*.cache
+*.gzip
+
+# Compiled binaries
+*.dll
+*.exe
+*.so
+*.dylib
+*.pdb
+
+# Test results
+TestResults/
+coverage.report.xml
+
+# Rider files
+*.sln.iml
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Database files (local dev)
+*.db
+reactivities.db
+
+# Ignore published output
+publish/
+
+# Other commonly ignored files
+*.vsix
+*.userprefs
+
+# Ensure .gitignore stays tracked
 !.gitignore
-
-# Notes:
-# - This will cause Git to ignore all files except files with the .cs extension.
-# - Files already tracked by Git (committed previously) will remain tracked until you remove them from the index.
-#   See the commands below if you want to update the repository to only track .cs files.
+API/obj/Debug/net9.0/API.AssemblyInfoInputs.cache
