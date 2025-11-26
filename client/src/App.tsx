@@ -1,24 +1,30 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
+import type { Activity } from "./lib/types/index";
+import { List, ListItem, ListItemText, Typography } from "@mui/material";
+import axios from "axios";
 
 function App() {
 
-  const [activities, setActivities] = useState([]);
+  const [activities, setActivities] = useState<Activity[]>([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/activities')
-      .then(response => response.json())
-      .then(data => setActivities(data))
+    axios.get<Activity[]>('https://localhost:5001/api/activities')
+      .then(response => setActivities(response.data))
       .catch(error => console.error('Error fetching activities:', error));
   }, []);
 
   return (
-    <div>
-     <h3>Reactivities</h3>
-     <ul>{activities.map((activity))}
-        <li key={activity.id}>{activity.title}</li>
-     </ul>
-    </div>
-  )
+    <Fragment>
+      <Typography variant='h3'>Reactivities</Typography>
+      <List>
+        {activities.map((activity) => (
+          <ListItem key={activity.id}>
+            <ListItemText>{activity.title}</ListItemText>
+          </ListItem>
+        ))}
+      </List>
+    </Fragment>
+  );
 }
 
 export default App
