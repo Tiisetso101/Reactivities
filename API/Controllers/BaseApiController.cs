@@ -1,14 +1,15 @@
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public abstract class BaseApiController : ControllerBase
+public  class BaseApiController : ControllerBase
 {
-    protected ActionResult<T> HandleResult<T>(T? result)
-    {
-        if (result == null) return NotFound();
-        return Ok(result);
-    }
+   private IMediator? _mediator;
+
+   protected IMediator Mediator => 
+   _mediator ??= HttpContext.RequestServices.GetRequiredService<IMediator>()
+   ?? throw new InvalidOperationException("IMediator service is not registered.");
 }
