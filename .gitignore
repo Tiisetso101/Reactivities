@@ -70,3 +70,5 @@ publish/
 # Ensure .gitignore stays tracked
 !.gitignore
 API/obj/Debug/net9.0/API.AssemblyInfoInputs.cache
+API/reactivities.db-shm
+API/reactivities.db-shm

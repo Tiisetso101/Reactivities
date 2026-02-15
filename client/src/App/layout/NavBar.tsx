@@ -29,7 +29,7 @@ export default function NavBar({ openForm }: Props) {
             Contacts</MenuItem>
           </Box>
           <Button size="large"
-           variant="outlined" 
+           variant="contained" 
           color="warning" onClick={() => openForm()}>
             Create Activity
             </Button>
